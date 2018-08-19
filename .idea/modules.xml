@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JokeTellingApp-Stage09_Configure_Test_Task.iml" filepath="$PROJECT_DIR$/JokeTellingApp-Stage09_Configure_Test_Task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javajoker/javajoker.iml" filepath="$PROJECT_DIR$/javajoker/javajoker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jokefactory/jokefactory.iml" filepath="$PROJECT_DIR$/jokefactory/jokefactory.iml" />
+    </modules>
+  </component>
+</project>

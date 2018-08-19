@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    defaultConfig {
+        // Enabling multidex support.
+        multiDexEnabled true
+        applicationId "com.udacity.gradle.builditbigger"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'tier'
+    productFlavors {
+        free {
+            dimension 'tier'
+            applicationId "com.udacity.gradle.builditbigger.free"
+            versionName "1.0­free"
+        }
+
+        paid {
+            dimension 'tier'
+            applicationId "com.udacity.gradle.builditbigger.paid"
+            versionName "1.0­paid"
+        }
+    }
+}
+
+
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Added for AdMob
+    implementation project(":javajoker")
+    implementation project(":jokefactory")
+    implementation project(path: ':backend', configuration: 'android-endpoints')
+
+    androidTestImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support:support-annotations:27.1.1'
+    androidTestImplementation 'org.hamcrest:hamcrest-core:1.3'
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    //noinspection GradleCompatible
+    implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.google.api-client:google-api-client:1.24.1'
+    implementation 'com.google.http-client:google-http-client-android:1.23.0'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    freeImplementation 'com.google.android.gms:play-services-ads:15.0.1'
+
+}
